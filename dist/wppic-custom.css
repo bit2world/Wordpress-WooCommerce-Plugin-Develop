@@ -1,0 +1,59 @@
+.wppic-cst-container {
+    display: flex;
+    justify-content: flex-start;
+    color : white;
+    border : 2px solid salmon;
+}
+.wppic-cst-item {
+    background-color: white;
+    padding : 15px;
+    text-align: left;
+    margin: 30px;
+}
+
+.wppic-cst-item .wp-pic-cst-description {
+    padding : 15px 0px;
+    text-align: left;
+}
+
+.wppic-cst-item .product-name {
+    padding : 15px 0px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.wp-pic-cst-button {
+    display: inline-block;
+    margin : 15px 15px 15px 0px;
+    padding : 5px 10px;
+    /* width: 25%; */
+    /* line-height: 50px; */
+    text-align: center;
+    border-radius: 25px;
+    color : green;
+    background-color: white;
+}
+
+.wp-pic-cst-button:hover {
+    background: green;
+    clear: white;
+}
+
+/* //////////////////////////////Overwrite ////////////////////////////////////////*/
+.wp-pic-card.wp-pic {
+    width:  150%;
+}
+.wp-pic .wp-pic-bar a {
+    /* width: auto; */
+    width: 33px;
+}
+
+.wp-pic .wp-pic-bar {
+    background-color: transparent;
+}
+
+.wp-pic-bar p {
+ padding: 15px 0px;
+ font-size: 18px;
+
+}
