@@ -28,14 +28,20 @@ if( !empty( $image ) ){
 } else {
 	$bgImage = 'data="no-image"';
 }
-
+echo $image ."echo function";
+echo $wppic_data->num_ratings ."myimage";
+// var_dump($image);
+// dd("1");
 //Plugin banner
 $banner = '';
 if ( !empty( $wppic_data->banners[ 'low' ] ) ) {
 	$banner = 'style="background-image: url(' . esc_attr( $wppic_data->banners[ 'low' ] ) . ' );"';
 }
-
-
+// $_GLOBAL['rk_myimage']
+$myimage = "This is my custom image";
+if ( ! empty( $_GLOABAL['rk_myimage'] ) ) {
+	$myimage = $_GLOABAL['rk_myimage'];
+}
 /***************************************************************
  * Start template
  ***************************************************************/
@@ -54,7 +60,7 @@ if ( !empty( $wppic_data->banners[ 'low' ] ) ) {
 					<a href="#" class="wp-pic-rating" target="_blank" title="<?php _e( 'Ratings', 'wp-plugin-info-card' ) ?>"></a>
 					<a href="#" class="wp-pic-rating" target="_blank" title="<?php _e( 'Ratings', 'wp-plugin-info-card' ) ?>"></a>
 					<a href="#" class="wp-pic-rating" target="_blank" title="<?php _e( 'Ratings', 'wp-plugin-info-card' ) ?>"></a>
-					<p><?php echo $wppic_data->myimage; ?> - 1240 reviews</p>
+					<p><?php echo $myimage; ?> - 1240 reviews</p>
  </div>
 				<p class="wp-pic-cst-description"><?php _e( 'Author(s):', 'wp-plugin-info-card' ) ?> <?php echo $wppic_data->author ?></p>
 				<div>

@@ -202,7 +202,7 @@ class Shortcodes {
 			'scheme'      => isset( $_GET['scheme'] ) ? $_GET['scheme'] : '',
 			'layout'      => isset( $_GET['layout'] ) ? $_GET['layout'] : '',
 			'multi'       => isset( $_GET['multi'] ) ? filter_var( $_GET['multi'], FILTER_VALIDATE_BOOLEAN ) : false,
-			'myimage'       => isset( $_GET['myimage'] ) ? $_GET['myimage'] : '',
+			'myimage'     => isset( $_GET['myimage'] ) ? $_GET['myimage'] : '',
 			
 		);
 		die( self::shortcode_function( $attrs ) );
@@ -408,7 +408,6 @@ class Shortcodes {
 		$col_gap     = absint( $attributes['col_gap'] );
 		$row_gap     = absint( $attributes['row_gap'] );
 		$myimage       = trim( esc_url( $attributes['myimage'] ) );
-
 
 		if ( empty( $layout ) ) {
 			$layout      = 'wp-pic-card';
@@ -920,11 +919,15 @@ class Shortcodes {
 		$image      = esc_html( $image );
 		$expiration = esc_html( $expiration );
 		$layout     = esc_html( $layout );
-		$myimage      = esc_html( $myimage );
+		$myimage    = esc_html( $myimage );
 
 
 		$wppic_data = wppic_api_parser( $type, $slug, $expiration );
+		
+		$_GLOBAL['rk_myimage'] = $myimage;
+		// $wppic_data->$myimage = $myimage;//////////////////////////////////////
 
+		echo $wppic_data->$myimage ."echo test";
 		// if plugin does not exists.
 		if ( ! $wppic_data ) {
 
